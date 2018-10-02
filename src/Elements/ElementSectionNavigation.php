@@ -5,6 +5,7 @@ namespace Dynamic\Elements\Section\Elements;
 use DNADesign\Elemental\Models\BaseElement;
 use DNADesign\Elemental\Models\ElementalArea;
 use DNADesign\ElementalList\Model\ElementList;
+use SilverStripe\Dev\Debug;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 
@@ -41,13 +42,16 @@ class ElementSectionNavigation extends BaseElement
     {
         $area = $this->Parent();
 
+        Debug::show($area instanceof ElementalArea);
         if ($area instanceof ElementalArea && $area->exists()) {
             if ($area->getOwnerPage() instanceof ElementList && $area->getOwnerPage()->exists()) {
                 return $area->getOwnerPage()->getPage();
             } else {
+
                 return $area->getOwnerPage();
             }
         }
+        Debug::show('test');
         return parent::getPage();
     }
 

@@ -3,7 +3,9 @@
 namespace Dynamic\Elements\Section\Tests;
 
 use DNADesign\Elemental\Models\ElementalArea;
+use Dynamic\Base\Test\TestBlogPost;
 use Dynamic\Elements\Section\Elements\ElementSectionNavigation;
+use Dynamic\Elements\Section\Test\TestPage;
 use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Dev\Debug;
 use SilverStripe\Dev\SapphireTest;
@@ -18,16 +20,6 @@ class ElementSectionNavigationTest extends SapphireTest
      * @var string
      */
     protected static $fixture_file = '../fixtures.yml';
-
-    /**
-     *
-     */
-    public function testGetPage()
-    {
-        $nav = $this->objFromFixture(ElementSectionNavigation::class, "one");
-        Debug::show($nav->getPage());
-        $this->assertInstanceOf(ElementalArea::class, $nav->getPage());
-    }
 
     /**
      * Tests getSectionNavigation().
