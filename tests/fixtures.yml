@@ -1,3 +1,12 @@
 Dynamic\Elements\Section\Elements\ElementSectionNavigation:
   one:
     Title: "Section Navigation One"
+
+DNADesign\Elemental\Models\ElementalArea:
+  default:
+    Elements: =>Dynamic\Elements\Section\Elements\ElementSectionNavigation.one
+
+SilverStripe\CMS\Model\SiteTree:
+  default:
+    Title: "Page One"
+    ElementalAreaID: DNADesign\Elemental\Models\ElementalArea.default
