@@ -77,7 +77,10 @@ class ElementSectionNavigation extends BaseElement
     public function getSummary()
     {
         if ($this->getPage()) {
-            return DBField::create_field('HTMLText', 'Navigation for ' . $this->getPage()->Title)->Summary(20);
+            return DBField::create_field(
+                'HTMLText',
+                'Navigation for ' . $this->getPage()->Title
+            )->Summary(20);
         }
         return DBField::create_field('HTMLText', '<p>Section Navigation</p>')->Summary(20);
     }
