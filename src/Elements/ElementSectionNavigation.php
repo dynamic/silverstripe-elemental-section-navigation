@@ -46,7 +46,7 @@ class ElementSectionNavigation extends BaseElement
                 $area->getOwnerPage() instanceof \DNADesign\ElementalList\Model\ElementList &&
                 $area->getOwnerPage()->exists()
             ) {
-                $page =  $area->getOwnerPage()->getPage();
+                $page = $area->getOwnerPage()->getPage();
             } else {
                 $page = $area->getOwnerPage();
             }
@@ -103,6 +103,6 @@ class ElementSectionNavigation extends BaseElement
      */
     public function getType()
     {
-        return _t(__CLASS__.'.BlockType', 'Section Navigation');
+        return _t(__CLASS__ . '.BlockType', 'Section Navigation');
     }
 }
