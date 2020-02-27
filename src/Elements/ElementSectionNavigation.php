@@ -4,7 +4,6 @@ namespace Dynamic\Elements\Section\Elements;
 
 use DNADesign\Elemental\Models\BaseElement;
 use DNADesign\Elemental\Models\ElementalArea;
-use DNADesign\ElementalList\Model\ElementList;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
 
@@ -34,21 +33,24 @@ class ElementSectionNavigation extends BaseElement
     private static $table_name = 'ElementSectionNavigation';
 
     /**
-     * @return null|\SilverStripe\ORM\DataObject
+     * @return null|\Page
      * @throws \SilverStripe\ORM\ValidationException
      */
     public function getPage()
     {
         $area = $this->Parent();
+        $page = parent::getPage();
 
         if ($area instanceof ElementalArea && $area->exists()) {
-            if ($area->getOwnerPage() instanceof ElementList && $area->getOwnerPage()->exists()) {
-                return $area->getOwnerPage()->getPage();
+            if ($area->getOwnerPage() instanceof \DNADesign\ElementalList\Model\ElementList && $area->getOwnerPage()->exists()) {
+                $page =  $area->getOwnerPage()->getPage();
             } else {
-                return $area->getOwnerPage();
+                $page = $area->getOwnerPage();
             }
         }
-        return parent::getPage();
+
+        $this->extend('updatePage', $page);
+        return $page;
     }
 
     /**
@@ -56,17 +58,17 @@ class ElementSectionNavigation extends BaseElement
      */
     public function getSectionNavigation()
     {
+        $children = false;
         if ($page = $this->getPage()) {
             if ($page->Children()->Count() > 0) {
-                return $page->Children();
+                $children = $page->Children();
             } elseif ($page->Parent()) {
-                return $page->Parent()->Children();
-            } else {
-                return false;
+                $children = $page->Parent()->Children();
             }
         }
 
-        return false;
+        $this->extend('updateChildren', $children);
+        return $children;
     }
 
     /**

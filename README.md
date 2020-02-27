@@ -26,10 +26,17 @@ A block to display a list of links to child pages, or pages in current level.
 
 Adds a block to display a list of links to child pages, or the pages in the current level. Useful for sidebar navigation.
 
+### Extension Points
+#### updatePage
+The updatePage extension point wis passed a page object and allows setting a new page.
+The page is used to get the children for the navigation.
+
+#### updateChildren
+The updateChildren extension point is passed a SS_List object containing the children of the parent page.
+
 ### Template Notes
 
 The default templates are based off [Bootstrap 4](https://getbootstrap.com/) classes/styling, specifically the [List Group](http://getbootstrap.com/docs/4.1/components/list-group/).
-
 
 ## Screen Shots
 
