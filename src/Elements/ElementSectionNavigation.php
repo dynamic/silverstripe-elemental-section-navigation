@@ -42,7 +42,10 @@ class ElementSectionNavigation extends BaseElement
         $page = parent::getPage();
 
         if ($area instanceof ElementalArea && $area->exists()) {
-            if ($area->getOwnerPage() instanceof \DNADesign\ElementalList\Model\ElementList && $area->getOwnerPage()->exists()) {
+            if (
+                $area->getOwnerPage() instanceof \DNADesign\ElementalList\Model\ElementList &&
+                $area->getOwnerPage()->exists()
+            ) {
                 $page =  $area->getOwnerPage()->getPage();
             } else {
                 $page = $area->getOwnerPage();
