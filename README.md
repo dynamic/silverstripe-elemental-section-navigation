@@ -2,11 +2,7 @@
 
 A block to display a list of links to child pages, or pages in current level.
 
-[![Build Status](https://travis-ci.org/dynamic/silverstripe-elemental-section-navigation.svg?branch=master)](https://travis-ci.org/dynamic/silverstripe-elemental-section-navigation)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dynamic/silverstripe-elemental-section-navigation/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dynamic/silverstripe-elemental-section-navigation/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/dynamic/silverstripe-elemental-section-navigation/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/dynamic/silverstripe-elemental-section-navigation/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/dynamic/silverstripe-elemental-section-navigation/badges/build.png?b=master)](https://scrutinizer-ci.com/g/dynamic/silverstripe-elemental-section-navigation/build-status/master)
-[![codecov](https://codecov.io/gh/dynamic/silverstripe-elemental-section-navigation/branch/master/graph/badge.svg)](https://codecov.io/gh/dynamic/silverstripe-elemental-section-navigation)
+[![CI](https://github.com/dynamic/silverstripe-elemental-section-navigation/actions/workflows/ci.yml/badge.svg)](https://github.com/dynamic/silverstripe-elemental-section-navigation/actions/workflows/ci.yml) [![Sponsors](https://img.shields.io/badge/GitHub-Sponsors-ff69b4?logo=github)](https://github.com/sponsors/dynamic)
 
 [![Latest Stable Version](https://poser.pugx.org/dynamic/silverstripe-elemental-section-navigation/v/stable)](https://packagist.org/packages/dynamic/silverstripe-elemental-section-navigation)
 [![Total Downloads](https://poser.pugx.org/dynamic/silverstripe-elemental-section-navigation/downloads)](https://packagist.org/packages/dynamic/silverstripe-elemental-section-navigation)
